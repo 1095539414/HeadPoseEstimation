@@ -18,7 +18,7 @@
     <h3>Human Dynamic Estimation Using Recurrent Neural Networks with IMU Information</h3>
     <p>
       Since a period of IMU information collected from Esense Earables only provides a piece of information about human head dynamics. It cannot give a full image on head pose. For example, if the user stops moving for a while, the information collected from accelerometers and gyroscopes is not enough to estimate the user’s head pose. Thus, it is necessary for our estimation model to estimate the head pose based on both IMU information and the history of head poses. A recurrent neural network has internal state (memory) which can be used to record the previous head poses. We tried to find papers on Human pose estimation using IMU information only; however, most papers combined IMU and camera information to do head pose estimation.
-      <br/>We found several papers focused on Human Dynamics Estimation using Recurrent Neural Networks with IMU information. A Convolution neural network helps to extract key features from the temporal axis and the Recurrent neural network allows to take both current input and previous ones. Combining the two networks can generate better performance. The three papers focused on different human dynamics estimation and the evaluations of results use different standards. Thus, I summarized the devices, network structures and evaluations of the three papers in the following table.
+      <br/><br/>We found several papers focused on Human Dynamics Estimation using Recurrent Neural Networks with IMU information. A Convolution neural network helps to extract key features from the temporal axis and the Recurrent neural network allows to take both current input and previous ones. Combining the two networks can generate better performance. The three papers focused on different human dynamics estimation and the evaluations of results use different standards. Thus, I summarized the devices, network structures and evaluations of the three papers in the following table.
     </p>
     <table>
       <tr>
@@ -62,6 +62,9 @@
         <td>ARMSE: 0.32</td>
       </tr>
     </table>
+    <p>
+      All the paper mentioned the noise brought by accelerometer; it is recommended to do data reprocessing on the IMU information, such as denoising and filtering. Paper [3] and [4] developed complex neural network structure for estimation. And paper [2] simply used two recurrent LSTM layers to extract features of IMU information. We would like to consider paper [2] as our primary deep learning model for head pose estimation.
+    </p>
     <h3>References</h3>
     <ul>
       <li>
