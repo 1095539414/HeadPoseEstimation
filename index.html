@@ -4,6 +4,9 @@
     <title>ECE M202A Project</title>
   </head>
   <body>
+    <h1 style="text-align: center; font-size: 40px;">
+      <b>Head Pose Estimation using Earables</b>
+    </h1>
     <p>
       <bold>Literature Analysis</bold>
       <br/><br/>We are going use the outputs of a pre-trained model as labels for our own model training. The vital method of this trained model is proposed for head pose estimation from a single image, a single RGB frame. The basic method is about regression and feature aggregation. The soft stagewise regression scheme is used to build the model. Moreover, this paper proposes to learn a fine-grained structure, which provides part-based information and pooled values, and spatially group pixel-level features of the feature map together into a set of features encoded with spatial information [1]. As a result, generated different variants can form complementary ensemble with learnable and non-learnable importance over the spatial location for more versatile spatial information [1].
@@ -26,9 +29,6 @@
         [4] Tobias Feigl, Sebastian Kram, Philipp Woller, Ramiz H. Siddiqui, Michael Philippsen, and Christopher Mutschler. A Bidirectional LSTM for Estimating Dynamic Human Velocities from a Single IMU. In <i>International Conference on Indoor Positioning and Indoor Navigation (IPIN)</i>, 2019
       </li>
     </ul>
-    <h1 style="text-align: center; font-size: 40px;">
-      <b>Head Pose Estimation using Earables</b>
-    </h1>
     <h2>Project Summary</h2>
     <p>
       Objective:<br/><br/>The goal of this project is to estimate the head-pose using IMU information collected from Nokia’s eSense earables and use the estimated head-pose to create and show animojis for users on an android device.
