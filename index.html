@@ -4,6 +4,28 @@
     <title>ECE M202A Project</title>
   </head>
   <body>
+    <h1>Literature Analysis</h1>
+    <p>
+      We are going use the outputs of a pre-trained model as labels for our own model training. The vital method of this trained model is proposed for head pose estimation from a single image, a single RGB frame. The basic method is about regression and feature aggregation. The soft stagewise regression scheme is used to build the model. Moreover, this paper proposes to learn a fine-grained structure, which provides part-based information and pooled values, and spatially group pixel-level features of the feature map together into a set of features encoded with spatial information [1]. As a result, generated different variants can form complementary ensemble with learnable and non-learnable importance over the spatial location for more versatile spatial information [1].
+      <br/><br/>By formulating the pose estimation, the soft stagewise regression and proposed FSA-Net are applied to pose estimation [1]. FSA-Net is composed of scoring function and the fine-grained structure mapping. Complementary model variants can be learned by defining learnable and non-learnable scoring functions of the pixel-level features [1]. Furthermore, there are implemented experiments showing that the ensemble of these variants outperforms the state-of-the-art methods.
+      <br/><br/>To try this model demo, the required platforms are Keras, tensorflow, GPU and Ubuntu with some mandatory dependencies. For the demo, the center of the color axes is the detected face center. Ideally, each frame should have new face detection results. However, if the face detection fails, the previous detection results will be used to estimate poses. The SSD face detection ought to be fast and robust, and that’s what we would like to try and use first.
+      <br/><br/>
+    </p>
+    <h3>References</h3>
+    <ul>
+      <li>
+        [1] Tsun-Yi Yang, Yi-Ting Chen, Yen-Yu Lin, and Yung-Yu Chuang. FSA-Net: Learning Fine-Grained Structure Aggregation for Head Pose Estimation from a Single Image. In <i>Proceedings of Conference on Computer Vision and Pattern Recognition (CVPR)</i>, 2019. 
+      </li>
+      <li>
+        [2] Patricio Rivera, Edwin Valarezo, Mun-Taek Choi, and Tae-Seong Kim. Recognition of Human Hand Activities Based on a Single Wrist IMU Using Recurrent Neural Networks. In <i>International Journal of Pharma Medicine and Biological Sciences Vol. 6, No. 4</i>, 2017
+      </li>
+      <li>
+        [3] Dzung Tri Nguyen, Eli Cohen, Mohammad Pourhomayoun, and Nabil Alshurafa.SwallowNet. Recurrent Neural Network Detects and Characterizes Eating Patterns. In <i>Second IEEE PerCom Workshop on Pervasive Health Technologies</i>, 2017
+      </li>
+      <li>
+        [4] Tobias Feigl, Sebastian Kram, Philipp Woller, Ramiz H. Siddiqui, Michael Philippsen, and Christopher Mutschler. A Bidirectional LSTM for Estimating Dynamic Human Velocities from a Single IMU. In <i>International Conference on Indoor Positioning and Indoor Navigation (IPIN)</i>, 2019
+      </li>
+    </ul>
     <h1 style="text-align: center; font-size: 40px;">
       <b>Head Pose Estimation using Earables</b>
     </h1>
@@ -33,26 +55,6 @@
       <li>RNN model for head pose estimation: Yuanyuan Xiang (60%), Qiuyang Yue (40%)</li>
       <li>Develop an Android app: Qiuyang Yue (60%), Yuanyuan Xiang (40%)</li>
     </ul>
-    <p>
-      Literature Analysis:<br/><br/>We are going use the outputs of a pre-trained model as labels for our own model training. The vital method of this trained model is proposed for head pose estimation from a single image, a single RGB frame. The basic method is about regression and feature aggregation. The soft stagewise regression scheme is used to build the model. Moreover, this paper proposes to learn a fine-grained structure, which provides part-based information and pooled values, and spatially group pixel-level features of the feature map together into a set of features encoded with spatial information [1]. As a result, generated different variants can form complementary ensemble with learnable and non-learnable importance over the spatial location for more versatile spatial information [1].
-      <br/><br/>By formulating the pose estimation, the soft stagewise regression and proposed FSA-Net are applied to pose estimation [1]. FSA-Net is composed of scoring function and the fine-grained structure mapping. Complementary model variants can be learned by defining learnable and non-learnable scoring functions of the pixel-level features [1]. Furthermore, there are implemented experiments showing that the ensemble of these variants outperforms the state-of-the-art methods.
-      <br/><br/>To try this model demo, the required platforms are Keras, tensorflow, GPU and Ubuntu with some mandatory dependencies. For the demo, the center of the color axes is the detected face center. Ideally, each frame should have new face detection results. However, if the face detection fails, the previous detection results will be used to estimate poses. The SSD face detection ought to be fast and robust, and that’s what we would like to try and use first.
-      <br/><br/>
-    </p>
-    <h3>References</h3>
-    <ul>
-      <li>
-        [1] Tsun-Yi Yang, Yi-Ting Chen, Yen-Yu Lin, and Yung-Yu Chuang. FSA-Net: Learning Fine-Grained Structure Aggregation for Head Pose Estimation from a Single Image. In <i>Proceedings of Conference on Computer Vision and Pattern Recognition (CVPR)</i>, 2019. 
-      </li>
-      <li>
-        [2] Patricio Rivera, Edwin Valarezo, Mun-Taek Choi, and Tae-Seong Kim. Recognition of Human Hand Activities Based on a Single Wrist IMU Using Recurrent Neural Networks. In <i>International Journal of Pharma Medicine and Biological Sciences Vol. 6, No. 4</i>, 2017
-      </li>
-      <li>
-        [3] Dzung Tri Nguyen, Eli Cohen, Mohammad Pourhomayoun, and Nabil Alshurafa.SwallowNet. Recurrent Neural Network Detects and Characterizes Eating Patterns. In <i>Second IEEE PerCom Workshop on Pervasive Health Technologies</i>, 2017
-      </li>
-      <li>
-        [4] Tobias Feigl, Sebastian Kram, Philipp Woller, Ramiz H. Siddiqui, Michael Philippsen, and Christopher Mutschler. A Bidirectional LSTM for Estimating Dynamic Human Velocities from a Single IMU. In <i>International Conference on Indoor Positioning and Indoor Navigation (IPIN)</i>, 2019
-      </li>
-    </ul>
+    
   </body>
 <html>
