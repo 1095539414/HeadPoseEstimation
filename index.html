@@ -15,6 +15,53 @@
       <br/><br/>To try this model demo, the required platforms are Keras, tensorflow, GPU and Ubuntu with some mandatory dependencies. For the demo, the center of the color axes is the detected face center. Ideally, each frame should have new face detection results. However, if the face detection fails, the previous detection results will be used to estimate poses. The SSD face detection ought to be fast and robust, and that’s what we would like to try and use first.
       <br/><br/>
     </p>
+    <h3>Human Dynamic Estimation Using Recurrent Neural Networks with IMU Information</h3>
+    <p>
+      Since a period of IMU information collected from Esense Earables only provides a piece of information about human head dynamics. It cannot give a full image on head pose. For example, if the user stops moving for a while, the information collected from accelerometers and gyroscopes is not enough to estimate the user’s head pose. Thus, it is necessary for our estimation model to estimate the head pose based on both IMU information and the history of head poses. A recurrent neural network has internal state (memory) which can be used to record the previous head poses. We tried to find papers on Human pose estimation using IMU information only; however, most papers combined IMU and camera information to do head pose estimation.
+      <br/>We found several papers focused on Human Dynamics Estimation using Recurrent Neural Networks with IMU information. A Convolution neural network helps to extract key features from the temporal axis and the Recurrent neural network allows to take both current input and previous ones. Combining the two networks can generate better performance. The three papers focused on different human dynamics estimation and the evaluations of results use different standards. Thus, I summarized the devices, network structures and evaluations of the three papers in the following table.
+    </p>
+    <table>
+      <tr>
+        <th>Paper</th>
+        <th>Human Dynamic Estimation</th>
+        <th>Device</th>
+        <th>Structure</th>
+        <th>Evaluation</th>
+      </tr>
+      <tr>
+        <td>[2]</td>
+        <td>Human Hand Activities</td>
+        <td>Accelerometer, Gyroscope, Magnetometer</td>
+        <td>
+          Two recurrent layers;
+          <br/>Each one with 256 LSTM cells and a fully connect layer;
+        </td>
+        <td>Accuracy: 80.09%, 74.92% (noise)</td>
+      </tr>
+      <tr>
+        <td>[3]</td>
+        <td>Eating Patterns</td>
+        <td>Piezoelectric sensors, Accelerometer, Gyroscope, Magnetometer</td>
+        <td>
+          SwallowNet:
+          <br/>Savitzky-Golay filter (preprocessing);
+          <br/>32 LSTM layers;
+        </td>
+        <td>F-score: 74.16</td>
+      </tr>
+      <tr>
+        <td>[4]</td>
+        <td>Dynamic Human Velocities</td>
+        <td>Accelerometer, Gyroscope</td>
+        <td>
+          CNN-BLSTM network:
+          <br/>1D convolutional layer (k=128) followed by a Batch normalization and a Rectified linear unit layer;
+          <br/>2D convolutional layer followed by a Batch normalization and a Rectified linear unit layer;
+          <br/>(un)folding layer and a flattening layer provides flat sequence
+        </td>
+        <td>ARMSE: 0.32</td>
+      </tr>
+    </table>
     <h3>References</h3>
     <ul>
       <li>
